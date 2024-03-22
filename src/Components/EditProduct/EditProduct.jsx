@@ -43,11 +43,11 @@ const EditProduct = () => {
             </div>
             <div className="editproduct-price">
                 <div className="editproduct-itemfield">
-                    <p>Price</p>
+                    <p>New Price</p>
                     <input value={values.new_price} onChange={e=>setValues({...values, new_price: e.target.value})} type="text" name='old_price' placeholder='Type here' />
                 </div>
                 <div className="editproduct-itemfield">
-                    <p>Offer Price</p>
+                    <p>Old Price</p>
                     <input value={values.old_price} onChange={e=>setValues({...values, old_price: e.target.value})} type="text" name='new_price' placeholder='Type here' />
                 </div>
             </div>
