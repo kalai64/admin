@@ -52,7 +52,7 @@ const EditProduct = () => {
                 </div>
             </div>
             </form>
-            <button className="editproduct-btn">Update</button>
+            <button className="editproduct-btn" onClick={handleSubmit}>Update</button>
         </div>
     );
 };
