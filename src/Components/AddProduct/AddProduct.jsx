@@ -3,7 +3,7 @@ import './AddProduct.css';
 import upload_area from '../../assets/upload_area.svg';
 
 const AddProduct = () => {
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState(false);
     const [productDetails, setProductDetails] = useState({
         name: "",
         image: "",
@@ -27,19 +27,18 @@ const AddProduct = () => {
 
         let formData = new FormData();
         formData.append('product', image);
-        
+        console.log(formData)
         await fetch('https://backend-knm3.onrender.com/upload', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
             },
             body: formData,
-        }).then((resp) => resp.json())
-        .then((data) => { responseData = data; });
+        }).then((resp) => resp.json()).then((data) => { responseData = data; });
 
         if (responseData.success) {
             product.image = responseData.image_url;
-            
+            console.log(product);
             await fetch('https://backend-knm3.onrender.com/addproduct', {
                 method: 'POST',
                 headers: {
